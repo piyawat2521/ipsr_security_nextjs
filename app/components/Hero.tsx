@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+
 type HeroProps = {
   eyebrow?: string;
   title?: string;
@@ -42,7 +43,7 @@ export function Hero({
 
           <h1
             id="hero-title"
-            className="max-w-2xl whitespace-pre-line text-4xl leading-[1.08] font-black tracking-[-0.055em] text-slate-950 sm:text-5xl lg:text-[3.65rem]"
+            className="font-sans max-w-2xl whitespace-pre-line text-4xl leading-[1.08] font-black tracking-[-0.055em] text-slate-950 sm:text-5xl lg:text-[3.65rem]"
           >
             {title.split("\\n").map((line, index) => (
               <span
@@ -67,7 +68,7 @@ export function Hero({
           <div className="mt-4 flex items-center gap-2.5" aria-hidden="true">
             <span className="h-1 w-10 rounded-full bg-blue-700" />
             <span className="h-1 w-3 rounded-full bg-cyan-400" />
-            <span className="text-[10px] font-bold tracking-[0.2em] text-slate-400">
+            <span className="font-sans text-[10px] font-bold tracking-[0.2em] text-slate-400">
               FACILITY SECURITY SYSTEM
             </span>
           </div>

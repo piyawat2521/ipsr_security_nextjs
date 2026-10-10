@@ -1,4 +1,5 @@
 import Link from "next/link";
+import LoginModal from "./LoginModal";
 
 const links = [
   { href: "/#overview", label: "ภาพรวมระบบ" },
@@ -62,22 +63,7 @@ export function Navbar({ activeHref = "/#overview" }: NavbarProps) {
           ))}
         </div>
 
-        <Link
-          href="/#contact"
-          className="inline-flex shrink-0 items-center gap-2 whitespace-nowrap rounded-full bg-blue-700 px-3 py-2.5 text-sm font-bold text-white shadow-md shadow-blue-900/10 transition hover:-translate-y-0.5 hover:bg-blue-800 sm:px-5"
-        >
-          <span className="hidden sm:inline">ติดต่อเจ้าหน้าที่</span>
-          <span className="sm:hidden">ติดต่อเรา</span>
-          <svg viewBox="0 0 20 20" fill="none" className="size-4" aria-hidden="true">
-            <path
-              d="M4 10h12m-5-5 5 5-5 5"
-              stroke="currentColor"
-              strokeWidth="1.7"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </Link>
+        <LoginModal />
       </nav>
     </header>
   );

@@ -20,7 +20,7 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Local database and phpMyAdmin
+## Local database, Prisma, and phpMyAdmin
 
 Docker Desktop and Docker Compose are required. Copy `.env.example` to `.env` and replace both password placeholders with local development passwords. Then start MySQL and phpMyAdmin:
 
@@ -30,6 +30,14 @@ docker compose up -d
 ```
 
 Open [http://localhost:8080](http://localhost:8080) and sign in with the `MYSQL_USER` and `MYSQL_PASSWORD` values from `.env`. MySQL is also available to applications on the host at `127.0.0.1:3307`; containers in this Compose project can reach it at `mysql:3306`.
+
+Prisma uses the same `MYSQL_*` values from `.env`. After starting MySQL, create/update the account table and generate the Prisma Client:
+
+```bash
+npm run db:migrate -- --name init
+```
+
+The initial schema creates an empty `users` table with a unique username and a `passwordHash` field. Store a password hash there, never a plain-text password. This creates the table only; the current Login form is not yet connected to authentication or account creation. Use `npm run db:studio` to browse the database in Prisma Studio. When the Next.js app itself runs inside Docker, set `MYSQL_HOST=mysql` instead of `127.0.0.1`.
 
 To stop the services without deleting database data, run `docker compose down`. To permanently remove the local database volume as well, run `docker compose down -v`.
 
