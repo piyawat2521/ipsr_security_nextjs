@@ -23,7 +23,11 @@ export const metadata: Metadata = {
     "ระบบรักษาความปลอดภัยอาคาร สถาบันวิจัยประชากรและสังคม มหาวิทยาลัยมหิดล ดูแลทุกพื้นที่เพื่อชุมชนที่ปลอดภัย",
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html
       lang="th"

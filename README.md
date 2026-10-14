@@ -57,3 +57,21 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## ถ้าไฟล์ของคุณอยู่ที่ lib/prisma.ts และโฟลเดอร์ generated อยู่ระดับเดียวกันกับ lib ให้แก้ไขไฟล์ lib/prisma.ts ตามนี้ครับ
+
+```typescript
+import "dotenv/config";
+import { PrismaMariaDb } from "@prisma/adapter-mariadb";
+import { PrismaClient } from "../generated/prisma/client/client";
+
+const adapter = new PrismaMariaDb({
+  host: process.env.DATABASE_HOST!,
+  user: process.env.DATABASE_USER!,
+  password: process.env.DATABASE_PASSWORD!,
+  database: process.env.DATABASE_NAME!,
+  connectionLimit: 5,
+});
+
+export const prisma = new PrismaClient({ adapter });
+```

@@ -56,7 +56,7 @@ export function Hero({
                     <span className="text-slate-950">SECURITY</span>
                   </>
                 ) : index === 1 ? (
-                  <span className="bg-gradient-to-r from-blue-700 via-blue-600 to-cyan-500 bg-clip-text text-transparent">
+                  <span className="bg-linear-to-r from-blue-700 via-blue-600 to-cyan-500 bg-clip-text text-transparent">
                     {line}
                   </span>
                 ) : (
@@ -121,12 +121,12 @@ export function Hero({
           </div>
         </div>
 
-        <div className="relative mx-auto w-full max-w-[560px] lg:ml-auto">
+        <div className="relative mx-auto w-full max-w-140 lg:ml-auto">
           <div className="absolute -left-6 top-12 size-16 rounded-2xl border border-blue-100 bg-white/70 shadow-lg shadow-blue-900/5 sm:-left-10 sm:size-20" />
           <div className="absolute -right-4 bottom-14 size-24 rounded-full border-[14px] border-blue-100/70 sm:-right-8 sm:size-32" />
 
           <div className="relative overflow-hidden rounded-[28px] border border-white bg-white p-3 shadow-[0_28px_80px_-30px_rgba(30,64,175,0.3)] sm:rounded-[34px] sm:p-4">
-            <div className="relative min-h-[340px] overflow-hidden rounded-[21px] bg-gradient-to-br from-[#0d2c65] via-[#12468e] to-[#287bd0] p-5 sm:min-h-[410px] sm:rounded-[26px] sm:p-7">
+            <div className="relative min-h-85 overflow-hidden rounded-[21px] bg-linear-to-br from-[#0d2c65] via-[#12468e] to-[#287bd0] p-5 sm:min-h-102.5 sm:rounded-[26px] sm:p-7">
               <div className="absolute inset-0 opacity-[0.13] [background-image:linear-gradient(rgba(255,255,255,.35)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.35)_1px,transparent_1px)] [background-size:34px_34px]" />
               <div className="absolute -right-16 -top-20 size-64 rounded-full border border-white/15" />
               <div className="absolute -right-5 -top-9 size-44 rounded-full border border-white/15" />
